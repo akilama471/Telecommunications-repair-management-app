@@ -55,9 +55,9 @@ class SplashScreenState extends State<SplashScreen> {
             Container(
               child: Text(
                 'Telecom Worker Manager',
-                style: GoogleFonts.oswald(
+                style: GoogleFonts.titilliumWeb(
                     textStyle:
-                        TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.w400)),
               ),
             ),
           ],

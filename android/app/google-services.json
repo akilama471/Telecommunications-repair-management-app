@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "296985561515",
+    "project_id": "ak-twm",
+    "storage_bucket": "ak-twm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296985561515:android:0dc6ec44b8a162784eeaee",
+        "android_client_info": {
+          "package_name": "com.akilamadusanka.telecom_worker_manager_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296985561515-39s1faq9c0ie5jmeoe6eqctsqgagg4m3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akilamadusanka.telecom_worker_manager_flutter",
+            "certificate_hash": "448e34788a65f53c8928df7e92e1d835b659cd4c"
+          }
+        },
+        {
+          "client_id": "296985561515-1b2fekqcvtn3c660gt96dgea2ht1ufrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHYv7elYO9qRgoABZpMziedn7XT7ct7Fg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296985561515-1b2fekqcvtn3c660gt96dgea2ht1ufrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

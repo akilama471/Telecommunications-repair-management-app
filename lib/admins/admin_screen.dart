@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AdminScreenPage extends StatefulWidget {
+class AdminScreenPage extends StatelessWidget {
   static const String routeName = '/admin-page';
 
   static Route route() {
@@ -11,11 +11,7 @@ class AdminScreenPage extends StatefulWidget {
   }
 
   const AdminScreenPage({super.key});
-  @override
-  State<AdminScreenPage> createState() => _AdminScreenPageState();
-}
 
-class _AdminScreenPageState extends State<AdminScreenPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(

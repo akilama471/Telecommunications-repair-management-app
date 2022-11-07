@@ -41,7 +41,6 @@ class DlsTopDetailsRow extends StatelessWidget {
                     )),
                 IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
                       Navigator.pushNamed(
                         context,
                         '/admin-page',

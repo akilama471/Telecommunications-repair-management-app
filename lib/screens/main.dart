@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/screens/dashboard_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/history_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/setting_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/task_screen_page.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/history.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/setting.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/task.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

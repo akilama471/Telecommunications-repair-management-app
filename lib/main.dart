@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'firebase_options.dart';
 import 'package:telecom_worker_manager_flutter/config/app_router.dart';
-import 'package:telecom_worker_manager_flutter/screens/splash_screen.dart';
+import 'package:telecom_worker_manager_flutter/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

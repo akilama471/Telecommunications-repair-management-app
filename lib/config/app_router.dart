@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/admins/admin_screen.dart';
-import 'package:telecom_worker_manager_flutter/screens/dashboard_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/history_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/setting_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/screens/task_screen_page.dart';
-import 'package:telecom_worker_manager_flutter/views/add_task.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/history.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/setting.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/task.dart';
+import 'package:telecom_worker_manager_flutter/screens/action/add_task.dart';
 
 class AppRoute {
   static Route onGenerateRoute(RouteSettings settings) {

@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/authentication.dart';
 import 'package:telecom_worker_manager_flutter/screens/action/permission.dart';
+import 'package:telecom_worker_manager_flutter/screens/auth/sign_in.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,17 +24,14 @@ class SplashScreenState extends State<SplashScreen> {
       Permission.location,
       Permission.phone,
     ].request();
-    if (statuses[Permission.location] == PermissionStatus.granted &&
-        statuses[Permission.phone] == PermissionStatus.granted) {
-      await Future.delayed(Duration(milliseconds: 2000), () {});
-
-      Navigator.pushReplacement(
-          this.context, MaterialPageRoute(builder: (context) => AuthGate()));
-    } else {
+    if (statuses[Permission.location] != PermissionStatus.granted &&
+        statuses[Permission.phone] != PermissionStatus.granted) {
       await Future.delayed(Duration(milliseconds: 1000), () {});
       Navigator.pushReplacement(this.context,
           MaterialPageRoute(builder: (context) => PermisionNotGranted()));
     }
+    Navigator.pushReplacement(
+        this.context, MaterialPageRoute(builder: (context) => SignInScreen()));
   }
 
   @override

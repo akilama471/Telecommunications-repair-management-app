@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
 class DlsTopDetailsRow extends StatelessWidget {
   const DlsTopDetailsRow({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class DlsTopDetailsRow extends StatelessWidget {
             Row(
               children: const <Widget>[
                 CircleAvatar(
-                  backgroundImage: AssetImage("assets/images/logo/profile.png"),
+                  backgroundImage: AssetImage(AssetStore.profileIcon),
                 ),
                 SizedBox(
                   width: 10.0,

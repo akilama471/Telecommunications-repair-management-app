@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/admins/admin_screen.dart';
+import 'package:telecom_worker_manager_flutter/screens/admins/admin_screen.dart';
+import 'package:telecom_worker_manager_flutter/screens/auth/sign_in.dart';
 import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
 import 'package:telecom_worker_manager_flutter/screens/main/history.dart';
 import 'package:telecom_worker_manager_flutter/screens/main/setting.dart';
@@ -9,6 +10,8 @@ import 'package:telecom_worker_manager_flutter/screens/action/add_task.dart';
 class AppRoute {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
+      case '/signin':
+        return SignInScreen.route();
       case '/dashboard':
         return DashboardScreenPage.route();
       case '/task':

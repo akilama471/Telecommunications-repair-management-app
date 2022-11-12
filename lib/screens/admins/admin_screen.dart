@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
 class AdminScreenPage extends StatelessWidget {
   static const String routeName = '/admin-page';
@@ -81,7 +82,7 @@ class DlsNavigationDrawer extends StatelessWidget {
                 const CircleAvatar(
                   radius: 60,
                   backgroundImage: AssetImage(
-                    "assets/images/logo/profile.png",
+                    AssetStore.profileIcon,
                   ),
                 ),
                 const SizedBox(

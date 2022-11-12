@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/components/dls_popup_menu_button.dart';
 import 'package:telecom_worker_manager_flutter/components/dls_textfield.dart';
+import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
 class AddTaskView extends StatefulWidget {
   static const String routeName = '/add-task';
@@ -25,7 +26,7 @@ class _AddTaskViewState extends State<AddTaskView> {
             child: Column(
               children: [
                 SizedBox(
-                  child: Image.asset('assets/images/add_task.png',
+                  child: Image.asset(AssetStore.taskHeader,
                       width: double.infinity, fit: BoxFit.fitWidth),
                 ),
                 Padding(

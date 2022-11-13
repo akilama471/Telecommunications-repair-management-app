@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       title: 'Telecom Worker Manager',
       theme: tAppTheme.lightTheme,
       darkTheme: tAppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       onGenerateRoute: AppRoute.onGenerateRoute,
       home: const SplashScreen(),
     );

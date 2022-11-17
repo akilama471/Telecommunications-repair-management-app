@@ -2,11 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:telecom_worker_manager_flutter/authentication/view/splash_screen_form.dart';
 import 'package:telecom_worker_manager_flutter/config/app_themes.dart';
 import 'firebase_options.dart';
 import 'package:telecom_worker_manager_flutter/config/app_router.dart';
-import 'package:telecom_worker_manager_flutter/splash.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,13 +29,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Telecom Worker Manager',
       theme: tAppTheme.lightTheme,
       darkTheme: tAppTheme.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       onGenerateRoute: AppRoute.onGenerateRoute,
-      home: const SplashScreen(),
+      home: SplashScreen(),
     );
   }
 }

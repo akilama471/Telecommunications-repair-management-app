@@ -18,8 +18,9 @@ class TextConfig {
   static const tResetViaEmailTitle = "E-Mail";
   static const tResetViaMobileTitle = "Mobile Number";
 
-  static const tEmail = "E-Mail (optional)";
+  static const tEmail = "E-Mail ( Required )";
   static const tDontHaveAcc = "Don't have an Account ? ";
+  static const tAlReadyHaveAcc = "Allready have an Account ? ";
 
   static const tNext = "Next";
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/components/custom_components/login_footer_widget.dart';
-import 'package:telecom_worker_manager_flutter/components/custom_components/login_form_widget.dart';
-import 'package:telecom_worker_manager_flutter/components/custom_components/login_header_widget.dart';
+import 'package:telecom_worker_manager_flutter/addons/components/login_footer_widget.dart';
+import 'package:telecom_worker_manager_flutter/addons/components/login_form_widget.dart';
+import 'package:telecom_worker_manager_flutter/addons/components/login_header_widget.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);

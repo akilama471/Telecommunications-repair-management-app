@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/authentication/view/signup_form.dart';
-import 'package:telecom_worker_manager_flutter/components/custom_widget/dls_social_form_field.dart';
+import 'package:telecom_worker_manager_flutter/authentication/view/signin_form.dart';
+import 'package:telecom_worker_manager_flutter/addons/widgets/dls_social_form_field.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
-class LoginFotterWidget extends StatelessWidget {
-  const LoginFotterWidget({
+class RegisterFotterWidget extends StatelessWidget {
+  const RegisterFotterWidget({
     Key? key,
   }) : super(key: key);
 
@@ -18,19 +18,6 @@ class LoginFotterWidget extends StatelessWidget {
       children: [
         const Text("OR"),
         const SizedBox(height: SizeConfig.tFormHeight - 20),
-        // ***************************=****//
-        // Phone Sign In Button Form Field //
-        // ********************************//
-        DlsSocialFormFieldWidget(
-            width: double.infinity,
-            icon: const Icon(
-              Icons.phone,
-              color: Colors.white,
-            ),
-            onPressed: () {},
-            title: TextConfig.tPhoneTitle),
-
-        const SizedBox(height: SizeConfig.tFormHeight - 30),
         // *********************************//
         // Google Sign In Button Form Field //
         // *********************************//
@@ -50,14 +37,14 @@ class LoginFotterWidget extends StatelessWidget {
         TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Get.to(() => const SignUpForm());
+              Get.to(() => const SignInForm());
             },
             child: Text.rich(TextSpan(
-                text: TextConfig.tDontHaveAcc,
+                text: TextConfig.tAlReadyHaveAcc,
                 style: Theme.of(context).textTheme.bodyText1,
                 children: const [
                   TextSpan(
-                      text: TextConfig.tSignUp,
+                      text: TextConfig.tSignIn,
                       style: TextStyle(color: Colors.blue))
                 ])))
       ],

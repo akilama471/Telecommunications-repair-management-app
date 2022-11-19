@@ -1,54 +1,31 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
+import 'package:telecom_worker_manager_flutter/authentication/view/splash_screen_form.dart';
+import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
 
 class AuthenticationServices extends GetxController {
   static AuthenticationServices get instance => Get.find();
 
   final auth = FirebaseAuth.instance;
   late final Rx<User?> firebaseUser;
+
+  @override
+  void onReady() {
+    firebaseUser = Rx<User?>(auth.currentUser);
+    firebaseUser.bindStream(auth.userChanges());
+    ever(firebaseUser, _setInitialScreen);
+  }
+
+  _setInitialScreen(User? user) {
+    user == null
+        ? Get.offAll(() => SplashScreen())
+        : Get.offAll(const DashboardScreenPage());
+  }
+
+  Future<void> createUserWithEmailAndPassword(
+      String email, String password) async {
+    await auth.createUserWithEmailAndPassword(email: email, password: password);
+  }
+
   var verificationId = ''.obs;
-
-  Future<void> phoneAuthentication(String phoneNo) async {
-    await auth.verifyPhoneNumber(
-        phoneNumber: phoneNo,
-        verificationCompleted: (credential) async {
-          await auth.signInWithCredential(credential);
-        },
-        codeSent: (verificationId, resendToken) {
-          this.verificationId.value = verificationId;
-        },
-        codeAutoRetrievalTimeout: (verificationId) {
-          this.verificationId.value = verificationId;
-        },
-        verificationFailed: (e) {
-          if (e.code == 'invalid-phone-number') {
-            Get.snackbar('Error', 'The provided phone number is not valid');
-          } else {
-            Get.snackbar('Error', 'Something went wrong. Try again.');
-          }
-        });
-  }
-
-  Future<bool> verifyOTP(String otp) async {
-    var credenrial = await auth.signInWithCredential(
-        PhoneAuthProvider.credential(
-            verificationId: verificationId.value, smsCode: otp));
-
-    return credenrial.user != null ? true : false;
-  }
-
-  verifyCurrentUser(BuildContext context) {
-    if (auth.currentUser == null) {
-      Navigator.pushNamed(
-        context,
-        '/sign-in',
-      );
-    } else {
-      Navigator.pushNamed(
-        context,
-        '/dashboard',
-      );
-    }
-  }
 }

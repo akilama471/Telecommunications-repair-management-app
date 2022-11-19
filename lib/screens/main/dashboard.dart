@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/components/custom_widget/dls_top_details_row.dart';
+import 'package:telecom_worker_manager_flutter/addons/widgets/dls_top_details_row.dart';
 
 class DashboardScreenPage extends StatefulWidget {
   static const String routeName = '/dashboard';

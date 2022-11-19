@@ -21,13 +21,13 @@ class DlsForgetPasswordBtnWidget extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
-          color: Colors.grey.shade200,
+          color: Colors.green,
         ),
         child: Row(
           children: [
             Icon(
               btnIcon,
-              size: 60.0,
+              size: 50.0,
             ),
             SizedBox(
                 width: MediaQuery.of(context).size.width - 170,
@@ -41,7 +41,7 @@ class DlsForgetPasswordBtnWidget extends StatelessWidget {
                         ),
                         Text(
                           btnSubTitle,
-                          style: Theme.of(context).textTheme.headline6,
+                          style: Theme.of(context).textTheme.headline5,
                         ),
                       ],
                     ))),

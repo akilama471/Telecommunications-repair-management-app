@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DlsTextFormFieldWidget extends StatefulWidget {
+class DlsPassFormFieldWidget extends StatefulWidget {
   // TextFormField Properties
   final TextEditingController? ctrl;
   final TextInputType inputType;
@@ -14,8 +14,9 @@ class DlsTextFormFieldWidget extends StatefulWidget {
   final IconData? suffixIconShow;
   final IconData? suffixIconHide;
   final double? suffixIconSize;
+  final TextInputAction textInputAction;
 
-  const DlsTextFormFieldWidget({
+  const DlsPassFormFieldWidget({
     Key? key,
     this.ctrl,
     required this.inputType,
@@ -29,13 +30,14 @@ class DlsTextFormFieldWidget extends StatefulWidget {
     this.suffixIconShow,
     this.suffixIconHide,
     this.suffixIconSize,
+    this.textInputAction = TextInputAction.done,
   }) : super(key: key);
   @override
   // ignore: library_private_types_in_public_api
-  _DlsTextFormFieldWidget createState() => _DlsTextFormFieldWidget();
+  _DlsPassFormFieldWidget createState() => _DlsPassFormFieldWidget();
 }
 
-class _DlsTextFormFieldWidget extends State<DlsTextFormFieldWidget> {
+class _DlsPassFormFieldWidget extends State<DlsPassFormFieldWidget> {
   bool _obscureText = true;
 
   @override
@@ -66,6 +68,7 @@ class _DlsTextFormFieldWidget extends State<DlsTextFormFieldWidget> {
                 _obscureText ? widget.suffixIconShow : widget.suffixIconHide,
                 size: widget.suffixIconSize,
               ))),
+      textInputAction: widget.textInputAction,
       style: TextStyle(fontSize: widget.textSize),
     );
   }

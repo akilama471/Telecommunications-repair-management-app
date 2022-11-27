@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/addons/widgets/dls_forget_password_button_widget.dart';
 import 'package:telecom_worker_manager_flutter/addons/widgets/dls_password_form_field.dart';
 import 'package:telecom_worker_manager_flutter/addons/widgets/dls_text_form_field.dart';
+import 'package:telecom_worker_manager_flutter/authentication/controller/signin_controller.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
 class LoginFormWiget extends StatelessWidget {
   const LoginFormWiget({
     Key? key,
+    required this.formKey,
+    required this.controller,
   }) : super(key: key);
+
+  final GlobalKey<FormState> formKey;
+  final SignInController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +22,15 @@ class LoginFormWiget extends StatelessWidget {
         padding:
             const EdgeInsets.symmetric(vertical: SizeConfig.tFormHeight - 10),
         child: Form(
+          key: formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // *************************//
               // Email Address Form Field //
               // *************************//
-              const DlsTextFormFieldWidget(
+              DlsTextFormFieldWidget(
+                ctrl: controller.eMailController,
                 inputType: TextInputType.emailAddress,
                 labelText: TextConfig.tEmail,
                 hintText: TextConfig.tEmail,
@@ -36,6 +44,7 @@ class LoginFormWiget extends StatelessWidget {
               // Password Form Field //
               // ********************//
               DlsPassFormFieldWidget(
+                ctrl: controller.passwordController,
                 inputType: TextInputType.name,
                 labelText: TextConfig.tPassword,
                 hintText: TextConfig.tPassword,
@@ -109,7 +118,14 @@ class LoginFormWiget extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () {}, child: const Text(TextConfig.tSignIn)),
+                    onPressed: () {
+                      if (formKey.currentState!.validate()) {
+                        SignInController.instance.loginUser(
+                            controller.eMailController.text.trim(),
+                            controller.passwordController.text.trim());
+                      }
+                    },
+                    child: const Text(TextConfig.tSignIn)),
               ),
               const SizedBox(height: SizeConfig.tFormHeight - 20),
             ],

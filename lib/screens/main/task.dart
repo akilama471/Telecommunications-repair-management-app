@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TaskScreenPage extends StatefulWidget {
-  static const String routeName = '/task';
-
-  static Route route() {
-    return MaterialPageRoute(
-        settings: const RouteSettings(name: routeName),
-        builder: (context) => const TaskScreenPage());
-  }
-
   const TaskScreenPage({super.key});
   @override
   State<TaskScreenPage> createState() => _TaskScreenPageState();

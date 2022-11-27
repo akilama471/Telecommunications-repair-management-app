@@ -2,14 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/addons/widgets/dls_top_details_row.dart';
 
 class DashboardScreenPage extends StatefulWidget {
-  static const String routeName = '/dashboard';
-
-  static Route route() {
-    return MaterialPageRoute(
-        settings: const RouteSettings(name: routeName),
-        builder: (context) => const DashboardScreenPage());
-  }
-
   const DashboardScreenPage({super.key});
   @override
   State<DashboardScreenPage> createState() => _DashboardScreenPageState();

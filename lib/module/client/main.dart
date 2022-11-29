@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/history.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/setting.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/task.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_customer.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_setting.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_task.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+class ClientMainScreen extends StatefulWidget {
+  const ClientMainScreen({super.key});
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<ClientMainScreen> createState() => _ClientMainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _ClientMainScreenState extends State<ClientMainScreen> {
   int cindex = 0;
 
   PageController pageControler = PageController(initialPage: 0);
@@ -26,10 +26,10 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         children: const [
-          DashboardScreenPage(),
-          TaskScreenPage(),
-          HistoryScreenPage(),
-          SettingScreenPage()
+          DashboardScreenPageView(),
+          TaskTaskScreenPageView(),
+          CustomerScreenPageView(),
+          SettingScreenPageView()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

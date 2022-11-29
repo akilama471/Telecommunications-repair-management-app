@@ -3,14 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
 class AdminScreenPage extends StatelessWidget {
-  static const String routeName = '/admin-page';
-
-  static Route route() {
-    return MaterialPageRoute(
-        settings: const RouteSettings(name: routeName),
-        builder: (context) => const AdminScreenPage());
-  }
-
   const AdminScreenPage({super.key});
 
   @override

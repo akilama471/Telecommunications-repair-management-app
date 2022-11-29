@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:telecom_worker_manager_flutter/authentication/services/authentication_services.dart';
-import 'package:telecom_worker_manager_flutter/authentication/view/splash_screen_form.dart';
 import 'package:telecom_worker_manager_flutter/config/app_themes.dart';
 import 'firebase_options.dart';
 
@@ -34,7 +33,9 @@ class MyApp extends StatelessWidget {
       theme: tAppTheme.lightTheme,
       darkTheme: tAppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: SplashScreen(),
+      defaultTransition: Transition.leftToRight,
+      transitionDuration: const Duration(milliseconds: 500),
+      home: const CircularProgressIndicator(),
     );
   }
 }

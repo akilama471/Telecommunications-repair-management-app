@@ -41,12 +41,7 @@ class DlsTopDetailsRow extends StatelessWidget {
                       color: Colors.white,
                     )),
                 IconButton(
-                    onPressed: () {
-                      Navigator.pushNamed(
-                        context,
-                        '/admin-page',
-                      );
-                    },
+                    onPressed: () {},
                     icon: const Icon(
                       Icons.settings,
                       color: Colors.white,

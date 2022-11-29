@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:telecom_worker_manager_flutter/authentication/exceptions/sign_in_with_email_and_password_exceptions.dart';
 import 'package:telecom_worker_manager_flutter/authentication/view/signin_form.dart';
 import 'package:telecom_worker_manager_flutter/authentication/view/splash_screen_form.dart';
-import 'package:telecom_worker_manager_flutter/screens/main/dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/client/main.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthenticationServices extends GetxController {
   static AuthenticationServices get instance => Get.find();
@@ -21,7 +23,7 @@ class AuthenticationServices extends GetxController {
   _setInitialScreen(User? user) {
     user == null
         ? Get.offAll(() => SplashScreen())
-        : Get.offAll(const DashboardScreenPage());
+        : Get.offAll(const ClientMainScreen());
   }
 
   Future<void> createUserWithEmailAndPassword(
@@ -30,10 +32,18 @@ class AuthenticationServices extends GetxController {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       firebaseUser.value != null
-          ? Get.offAll(() => const DashboardScreenPage())
+          ? Get.offAll(() => const ClientMainScreen())
           : Get.to(const SignInForm());
     } on FirebaseAuthException catch (e) {
       final ex = SignInWithEmailAndPasswordFailure.code(e.code);
+      Fluttertoast.showToast(
+          msg: ex.toString(),
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
       throw ex;
     } catch (_) {
       const ex = SignInWithEmailAndPasswordFailure();

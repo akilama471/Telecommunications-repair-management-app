@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:telecom_worker_manager_flutter/module/tasks/add_task.dart';
 
-class TaskScreenPage extends StatefulWidget {
-  const TaskScreenPage({super.key});
+class TaskTaskScreenPageView extends StatefulWidget {
+  const TaskTaskScreenPageView({super.key});
   @override
-  State<TaskScreenPage> createState() => _TaskScreenPageState();
+  State<TaskTaskScreenPageView> createState() => _TaskTaskScreenPageViewState();
 }
 
-class _TaskScreenPageState extends State<TaskScreenPage> {
+class _TaskTaskScreenPageViewState extends State<TaskTaskScreenPageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,10 +19,7 @@ class _TaskScreenPageState extends State<TaskScreenPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(
-            context,
-            '/add-task',
-          );
+          Get.to(const AddTaskView());
         },
         backgroundColor: Colors.blue,
         child: const Icon(Icons.add),

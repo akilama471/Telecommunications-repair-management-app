@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/addons/widgets/dls_top_details_row.dart';
 
-class DashboardScreenPage extends StatefulWidget {
-  const DashboardScreenPage({super.key});
+class DashboardScreenPageView extends StatefulWidget {
+  const DashboardScreenPageView({super.key});
   @override
-  State<DashboardScreenPage> createState() => _DashboardScreenPageState();
+  State<DashboardScreenPageView> createState() =>
+      _DashboardScreenPageViewState();
 }
 
-class _DashboardScreenPageState extends State<DashboardScreenPage> {
+class _DashboardScreenPageViewState extends State<DashboardScreenPageView> {
   Future<bool> _onWillPop(BuildContext context) async {
     bool? exitResualt = await _showExitBottomSheet(context);
     return exitResualt ?? false;

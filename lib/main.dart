@@ -4,18 +4,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:telecom_worker_manager_flutter/authentication/services/authentication_services.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/services/authentication_services.dart';
 import 'package:telecom_worker_manager_flutter/config/app_themes.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)
-      .then((value) => Get.put(AuthenticationServices()));
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform).then((value) => Get.put(AuthenticationServices()));
 
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+    yield LicenseEntryWithLineBreaks([
+      'google_fonts'
+    ], license);
   });
 
   GoogleFonts.config.allowRuntimeFetching = false;

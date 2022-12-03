@@ -2,27 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
-class AdminScreenPage extends StatelessWidget {
-  const AdminScreenPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Admin Action Page",
-              style: GoogleFonts.titilliumWeb(
-                  textStyle: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold)),
-            ),
-          ),
-        ),
-        drawer: const DlsNavigationDrawer(),
-      );
-}
-
-class DlsNavigationDrawer extends StatelessWidget {
-  const DlsNavigationDrawer({
+class AdminSideNavigationDrawer extends StatelessWidget {
+  const AdminSideNavigationDrawer({
     Key? key,
   }) : super(key: key);
 
@@ -33,29 +14,37 @@ class DlsNavigationDrawer extends StatelessWidget {
         children: <Widget>[
           navigationHeader(context),
           ListTile(
-            leading: const Icon(Icons.input),
-            title: const Text('Welcome'),
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Dashboard'),
             onTap: () => {},
           ),
           ListTile(
-            leading: const Icon(Icons.verified_user),
-            title: const Text('Profile'),
-            onTap: () => {Navigator.of(context).pop()},
+            leading: const Icon(Icons.input),
+            title: const Text('Parameters'),
+            onTap: () => {
+              Navigator.of(context).pop()
+            },
           ),
           ListTile(
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).pop()
+            },
           ),
           ListTile(
             leading: const Icon(Icons.border_color),
             title: const Text('Feedback'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).pop()
+            },
           ),
           ListTile(
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.of(context).pop()
+            },
           ),
         ],
       ));
@@ -82,11 +71,7 @@ class DlsNavigationDrawer extends StatelessWidget {
                 ),
                 Text(
                   "Admin",
-                  style: GoogleFonts.titilliumWeb(
-                      textStyle: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white)),
+                  style: GoogleFonts.titilliumWeb(textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
                 ),
               ],
             ),

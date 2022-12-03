@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_forget_password_button_widget.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_password_form_field.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_text_form_field.dart';
-import 'package:telecom_worker_manager_flutter/authentication/controller/signin_controller.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_forget_password_button_widget.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_password_form_field.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_text_form_field.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/controller/signin_controller.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
@@ -19,8 +19,7 @@ class LoginFormWiget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding:
-            const EdgeInsets.symmetric(vertical: SizeConfig.tFormHeight - 10),
+        padding: const EdgeInsets.symmetric(vertical: SizeConfig.tFormHeight - 10),
         child: Form(
           key: formKey,
           child: Column(
@@ -66,25 +65,19 @@ class LoginFormWiget extends StatelessWidget {
                   onPressed: () {
                     showModalBottomSheet(
                         context: context,
-                        shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(20),
-                                topRight: Radius.circular(20))),
+                        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
                         builder: (context) => Container(
-                              padding:
-                                  const EdgeInsets.all(SizeConfig.tDefaultSize),
+                              padding: const EdgeInsets.all(SizeConfig.tDefaultSize),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     TextConfig.tForgetPasswordTitle,
-                                    style:
-                                        Theme.of(context).textTheme.headline2,
+                                    style: Theme.of(context).textTheme.headline2,
                                   ),
                                   Text(
                                     TextConfig.tForgetPasswordSubTitle,
-                                    style:
-                                        Theme.of(context).textTheme.bodyText2,
+                                    style: Theme.of(context).textTheme.bodyText2,
                                   ),
                                   const SizedBox(
                                     height: 30.0,
@@ -101,8 +94,7 @@ class LoginFormWiget extends StatelessWidget {
                                   DlsForgetPasswordBtnWidget(
                                     btnIcon: Icons.mobile_friendly_rounded,
                                     btnTitle: TextConfig.tResetViaTitle,
-                                    btnSubTitle:
-                                        TextConfig.tResetViaMobileTitle,
+                                    btnSubTitle: TextConfig.tResetViaMobileTitle,
                                     onTap: () {},
                                   ),
                                 ],
@@ -120,9 +112,7 @@ class LoginFormWiget extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        SignInController.instance.loginUser(
-                            controller.eMailController.text.trim(),
-                            controller.passwordController.text.trim());
+                        SignInController.instance.loginUser(controller.eMailController.text.trim(), controller.passwordController.text.trim());
                       }
                     },
                     child: const Text(TextConfig.tSignIn)),

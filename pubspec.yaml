@@ -39,11 +39,10 @@ dependencies:
   google_fonts: ^3.0.1
   firebase_auth: ^4.1.1
   firebase_core: ^2.1.1
-  permission_handler: ^10.0.0
   cloud_firestore: ^4.0.4
+  permission_handler: ^10.0.0
   get: ^4.6.5
   fluttertoast: ^8.1.1
-  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:

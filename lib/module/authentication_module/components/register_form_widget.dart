@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_password_form_field.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_text_form_field.dart';
-import 'package:telecom_worker_manager_flutter/authentication/controller/signup_controller.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_password_form_field.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_text_form_field.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/controller/signup_controller.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
@@ -18,8 +18,7 @@ class RegisterFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:
-          const EdgeInsets.symmetric(vertical: SizeConfig.tFormHeight - 10),
+      padding: const EdgeInsets.symmetric(vertical: SizeConfig.tFormHeight - 10),
       child: Form(
           key: formKey,
           child: Column(
@@ -63,9 +62,7 @@ class RegisterFormWidget extends StatelessWidget {
                 prefixIcon: Icons.mail,
                 prefixIconSize: 22,
               ),
-              const SizedBox(
-                  height: SizeConfig.tFormHeight -
-                      20), // ************************//
+              const SizedBox(height: SizeConfig.tFormHeight - 20), // ************************//
               // Phone Number Form Field //
               // ************************//
               DlsPassFormFieldWidget(
@@ -91,8 +88,11 @@ class RegisterFormWidget extends StatelessWidget {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         SignUpController.instance.registerUser(
-                            controller.eMailController.text.trim(),
-                            controller.passwordController.text.trim());
+                          controller.eMailController.text.trim(),
+                          controller.passwordController.text.trim(),
+                          controller.firstNameController.text.trim(),
+                          controller.lastNameController.text.trim(),
+                        );
                       }
                     },
                     child: Text(TextConfig.tSignUp.toUpperCase()),

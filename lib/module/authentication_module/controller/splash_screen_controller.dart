@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/authentication/view/signin_form.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/signin_form.dart';
 
 class SplashScreenController extends GetxController {
   static SplashScreenController get find => Get.find();

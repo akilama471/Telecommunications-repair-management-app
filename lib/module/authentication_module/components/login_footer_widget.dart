@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/authentication/view/signup_form.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_social_form_field.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/signup_form.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_social_form_field.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
@@ -52,14 +52,9 @@ class LoginFotterWidget extends StatelessWidget {
               Navigator.pop(context);
               Get.to(() => const SignUpForm());
             },
-            child: Text.rich(TextSpan(
-                text: TextConfig.tDontHaveAcc,
-                style: Theme.of(context).textTheme.bodyText1,
-                children: const [
-                  TextSpan(
-                      text: TextConfig.tSignUp,
-                      style: TextStyle(color: Colors.blue))
-                ])))
+            child: Text.rich(TextSpan(text: TextConfig.tDontHaveAcc, style: Theme.of(context).textTheme.bodyText1, children: const [
+              TextSpan(text: TextConfig.tSignUp, style: TextStyle(color: Colors.blue))
+            ])))
       ],
     );
   }

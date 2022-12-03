@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/authentication/controller/splash_screen_controller.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/controller/splash_screen_controller.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
@@ -31,9 +31,7 @@ class SplashScreen extends StatelessWidget {
               () => AnimatedPositioned(
                   duration: const Duration(milliseconds: 1600),
                   top: 150,
-                  left: splashScreenController.animate.value
-                      ? SizeConfig.tDefaultSize
-                      : -80,
+                  left: splashScreenController.animate.value ? SizeConfig.tDefaultSize : -80,
                   child: Obx(
                     () => AnimatedOpacity(
                       duration: const Duration(milliseconds: 1600),

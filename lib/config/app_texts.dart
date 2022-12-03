@@ -41,4 +41,7 @@ class TextConfig {
   static const tVerifyOTP = "Verify OTP";
 
   static const tSelectBranch = "Select Branch";
+
+  static const tAdminRole = "admin";
+  static const tMemberRole = "member";
 }

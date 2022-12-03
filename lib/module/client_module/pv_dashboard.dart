@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/addons/widgets/dls_top_details_row.dart';
+import 'package:telecom_worker_manager_flutter/widgets/dls_top_details_row.dart';
 
 class DashboardScreenPageView extends StatefulWidget {
   const DashboardScreenPageView({super.key});
   @override
-  State<DashboardScreenPageView> createState() =>
-      _DashboardScreenPageViewState();
+  State<DashboardScreenPageView> createState() => _DashboardScreenPageViewState();
 }
 
 class _DashboardScreenPageViewState extends State<DashboardScreenPageView> {
@@ -91,19 +90,13 @@ class _DashboardScreenPageViewState extends State<DashboardScreenPageView> {
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const <Widget>[
-                      Text("Action",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 22.0)),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 12.0),
-                      )
-                    ]),
+                child: Row(crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.spaceBetween, children: const <Widget>[
+                  Text("Action", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0)),
+                  Text(
+                    "View All",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0),
+                  )
+                ]),
               ),
               const SizedBox(
                 height: 10.0,
@@ -111,8 +104,7 @@ class _DashboardScreenPageViewState extends State<DashboardScreenPageView> {
               SizedBox(
                 height: 150.0,
                 child: GridView(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 3 / 2),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, childAspectRatio: 3 / 2),
                   children: <Widget>[
                     _gridItem(Icons.add_task, "New Task"),
                     _gridItem(Icons.add_task, "New Customer"),
@@ -128,8 +120,7 @@ class _DashboardScreenPageViewState extends State<DashboardScreenPageView> {
                 child: Row(children: const <Widget>[
                   Text(
                     "Latest Update",
-                    style:
-                        TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
                   )
                 ]),
               ),

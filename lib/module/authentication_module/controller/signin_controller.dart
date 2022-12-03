@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/authentication/services/authentication_services.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/services/authentication_services.dart';
 
 class SignInController extends GetxController {
   static SignInController get instance => Get.find();
@@ -9,7 +9,6 @@ class SignInController extends GetxController {
   final passwordController = TextEditingController();
 
   void loginUser(String email, String password) {
-    AuthenticationServices.instance
-        .loginUserWithEmailAndPassword(email, password);
+    AuthenticationServices.instance.loginUserWithEmailAndPassword(email, password);
   }
 }

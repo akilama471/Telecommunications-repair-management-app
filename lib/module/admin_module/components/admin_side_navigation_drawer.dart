@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
+import 'package:telecom_worker_manager_flutter/module/admin_module/admin_dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/admin_module/pages/admin_parameter.dart';
 
 class AdminSideNavigationDrawer extends StatelessWidget {
   const AdminSideNavigationDrawer({
@@ -16,13 +19,15 @@ class AdminSideNavigationDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.dashboard),
             title: const Text('Dashboard'),
-            onTap: () => {},
+            onTap: () => {
+              Get.offAll(() => const AdminDashboardPage())
+            },
           ),
           ListTile(
             leading: const Icon(Icons.input),
             title: const Text('Parameters'),
             onTap: () => {
-              Navigator.of(context).pop()
+              Get.offAll(() => const AdminParameterPage())
             },
           ),
           ListTile(

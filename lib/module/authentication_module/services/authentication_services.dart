@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:telecom_worker_manager_flutter/module/authentication_module/exceptions/sign_up_exceptions.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/signin_form.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/splash_screen_form.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_splash.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
-import 'package:telecom_worker_manager_flutter/module/admin_module/dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/admin_module/admin_dashboard.dart';
 import 'package:telecom_worker_manager_flutter/module/client_module/main.dart';
 
 class AuthenticationServices extends GetxController {
@@ -24,7 +24,7 @@ class AuthenticationServices extends GetxController {
   }
 
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => SplashScreen()) : aurhorizeAccess(user.uid);
+    user == null ? Get.offAll(() => const SplashScreenView()) : aurhorizeAccess(user.uid);
   }
 
   Future<void> createUserWithEmailAndPassword(String email, String password, String firstName, String lastName, String userRole) async {
@@ -33,13 +33,13 @@ class AuthenticationServices extends GetxController {
         // store user data
         storeNewUser(UserJsonModel(uid: auth.currentUser!.uid, firstName: firstName, lastName: lastName, email: email, userRole: userRole));
         //navigatioon
-        firebaseUser.value != null ? aurhorizeAccess(auth.currentUser!.uid) : Get.offAll(const SignInForm());
+        firebaseUser.value != null ? aurhorizeAccess(auth.currentUser!.uid) : Get.offAll(const SignInScreenView());
       });
     } on FirebaseAuthException catch (e) {
       final ex = SignUpFailureModule().signupfailure(e.code);
-      Fluttertoast.showToast(msg: ex.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: Colors.red, textColor: Colors.white, fontSize: 16.0);
-    } catch (e) {
-      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: Colors.red, textColor: Colors.white, fontSize: 16.0);
+      Fluttertoast.showToast(msg: ex.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.BOTTOM, timeInSecForIosWeb: 1, backgroundColor: Colors.grey, textColor: Colors.black, fontSize: 12.0);
+    } catch (ex) {
+      Fluttertoast.showToast(msg: ex.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.BOTTOM, timeInSecForIosWeb: 1, backgroundColor: Colors.grey, textColor: Colors.black, fontSize: 12.0);
     }
   }
 
@@ -55,25 +55,25 @@ class AuthenticationServices extends GetxController {
     final dbUser = FirebaseFirestore.instance.collection("users").doc(auth.currentUser!.uid);
     try {
       await dbUser.set(userModel.toJson());
-    } catch (e) {
-      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: Colors.red, textColor: Colors.white, fontSize: 16.0);
+    } catch (ex) {
+      Fluttertoast.showToast(msg: ex.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.BOTTOM, timeInSecForIosWeb: 1, backgroundColor: Colors.grey, textColor: Colors.black, fontSize: 12.0);
     }
   }
 
   Future<void> aurhorizeAccess(String userUid) async {
     try {
-      final dbAuthUser = FirebaseFirestore.instance.collection("users").doc(auth.currentUser!.uid);
+      final dbAuthUser = FirebaseFirestore.instance.collection("users").doc(userUid);
       final snapshot = await dbAuthUser.get();
       if (snapshot.exists) {
         var userData = UserJsonModel.fromJson(snapshot.data()!);
         if (userData.userRole == TextConfig.tAdminRole) {
-          Get.offAll(() => const AdminScreenPage());
+          Get.offAll(() => const AdminDashboardPage());
         } else if (userData.userRole == TextConfig.tMemberRole) {
           Get.offAll(() => const ClientMainScreen());
         }
       }
-    } catch (e) {
-      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: Colors.red, textColor: Colors.white, fontSize: 16.0);
+    } catch (ex) {
+      Fluttertoast.showToast(msg: ex.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.BOTTOM, timeInSecForIosWeb: 1, backgroundColor: Colors.grey, textColor: Colors.black, fontSize: 12.0);
     }
   }
 }

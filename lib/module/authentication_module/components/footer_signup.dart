@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/signin_form.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signup.dart';
 import 'package:telecom_worker_manager_flutter/widgets/dls_social_form_field.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
-class RegisterFotterWidget extends StatelessWidget {
-  const RegisterFotterWidget({
+class FooterSignUpComponents extends StatelessWidget {
+  const FooterSignUpComponents({
     Key? key,
   }) : super(key: key);
 
@@ -37,10 +37,10 @@ class RegisterFotterWidget extends StatelessWidget {
         TextButton(
             onPressed: () {
               Navigator.pop(context);
-              Get.to(() => const SignInForm());
+              Get.to(() => const SignUpScreenView());
             },
-            child: Text.rich(TextSpan(text: TextConfig.tAlReadyHaveAcc, style: Theme.of(context).textTheme.bodyText1, children: const [
-              TextSpan(text: TextConfig.tSignIn, style: TextStyle(color: Colors.blue))
+            child: Text.rich(TextSpan(text: TextConfig.tDontHaveAcc, style: Theme.of(context).textTheme.bodyText1, children: const [
+              TextSpan(text: TextConfig.tSignUp, style: TextStyle(color: Colors.blue))
             ])))
       ],
     );

@@ -3,8 +3,8 @@ import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
-class LoginHeaderWidget extends StatelessWidget {
-  const LoginHeaderWidget({
+class HeaderSignUpComponents extends StatelessWidget {
+  const HeaderSignUpComponents({
     Key? key,
   }) : super(key: key);
 

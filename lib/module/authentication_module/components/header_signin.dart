@@ -3,8 +3,8 @@ import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 
-class RegisterHeaderWidget extends StatelessWidget {
-  const RegisterHeaderWidget({
+class HeaderSignInComponents extends StatelessWidget {
+  const HeaderSignInComponents({
     Key? key,
   }) : super(key: key);
 

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/signin_form.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signin.dart';
 
 class SplashScreenController extends GetxController {
   static SplashScreenController get find => Get.find();
@@ -9,6 +9,6 @@ class SplashScreenController extends GetxController {
     await Future.delayed(const Duration(microseconds: 500));
     animate.value = true;
     await Future.delayed(const Duration(microseconds: 5000));
-    Get.to(const SignInForm());
+    Get.to(const SignInScreenView());
   }
 }

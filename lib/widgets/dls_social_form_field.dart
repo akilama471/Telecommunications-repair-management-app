@@ -6,13 +6,7 @@ class DlsSocialFormFieldWidget extends StatefulWidget {
   final Function() onPressed;
   final String title;
 
-  const DlsSocialFormFieldWidget(
-      {Key? key,
-      required this.width,
-      required this.icon,
-      required this.onPressed,
-      required this.title})
-      : super(key: key);
+  const DlsSocialFormFieldWidget({Key? key, required this.width, required this.icon, required this.onPressed, required this.title}) : super(key: key);
   @override
   // ignore: library_private_types_in_public_api
   _DlsSocialFormFieldWidget createState() => _DlsSocialFormFieldWidget();

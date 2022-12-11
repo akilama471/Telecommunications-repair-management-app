@@ -38,8 +38,7 @@ class _DlsTextFormFieldWidget extends State<DlsTextFormFieldWidget> {
       maxLength: widget.maxLength,
       obscuringCharacter: '*',
       decoration: InputDecoration(
-        contentPadding:
-            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+        contentPadding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
         prefixIcon: Icon(
           widget.prefixIcon,
           size: widget.prefixIconSize,

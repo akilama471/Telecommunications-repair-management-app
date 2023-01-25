@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/controller/ctrl_splash.dart';
 
 class SplashScreenView extends StatelessWidget {
-  const SplashScreenView({Key? key}) : super(key: key);
+  SplashScreenView({Key? key}) : super(key: key);
 
-  // ignore: non_constant_identifier_names
-  SplashScreenController() => Get.put(SplashScreenController()());
+  final splashScreenController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
-    SplashScreenController().startAnimation();
+    splashScreenController.startAnimation();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(

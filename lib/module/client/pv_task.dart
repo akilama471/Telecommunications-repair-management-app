@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/tasks/add_task.dart';
+import 'package:telecom_worker_manager_flutter/module/client/tasks/add_task.dart';
 
 class TaskTaskScreenPageView extends StatefulWidget {
   const TaskTaskScreenPageView({super.key});

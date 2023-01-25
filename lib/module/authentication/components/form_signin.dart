@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:telecom_worker_manager_flutter/widgets/dls_password_form_field.dart';
 import 'package:telecom_worker_manager_flutter/widgets/dls_text_form_field.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/controller/ctrl_signup.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/controller/ctrl_signup.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
 

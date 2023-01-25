@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/view/view_signin.dart';
 
 class SplashScreenController extends GetxController {
-  static SplashScreenController get find => Get.find();
+  static SplashScreenController get instance => Get.find();
   RxBool animate = false.obs;
 
   Future startAnimation() async {

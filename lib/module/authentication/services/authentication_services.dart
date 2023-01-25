@@ -3,12 +3,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/exceptions/sign_up_exceptions.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signin.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_splash.dart';
+import 'package:telecom_worker_manager_flutter/module/admin/dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/exceptions/sign_up_exceptions.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/view/view_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/view/view_splash.dart';
 import 'package:telecom_worker_manager_flutter/config/app_texts.dart';
-import 'package:telecom_worker_manager_flutter/module/admin_module/admin_dashboard.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/main.dart';
+import 'package:telecom_worker_manager_flutter/module/client/main.dart';
 
 class AuthenticationServices extends GetxController {
   static AuthenticationServices get instance => Get.find();
@@ -24,7 +24,7 @@ class AuthenticationServices extends GetxController {
   }
 
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => const SplashScreenView()) : aurhorizeAccess(user.uid);
+    user == null ? Get.offAll(() => SplashScreenView()) : aurhorizeAccess(user.uid);
   }
 
   Future<void> createUserWithEmailAndPassword(String email, String password, String firstName, String lastName, String userRole) async {
@@ -67,7 +67,7 @@ class AuthenticationServices extends GetxController {
       if (snapshot.exists) {
         var userData = UserJsonModel.fromJson(snapshot.data()!);
         if (userData.userRole == TextConfig.tAdminRole) {
-          Get.offAll(() => const AdminDashboardPage());
+          Get.offAll(() => const AdminDashboardView());
         } else if (userData.userRole == TextConfig.tMemberRole) {
           Get.offAll(() => const ClientMainScreen());
         }

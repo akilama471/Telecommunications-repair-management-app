@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/services/authentication_services.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/services/authentication_services.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 
 class DlsTopDetailsRow extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/pv_customer.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/pv_dashboard.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/pv_setting.dart';
-import 'package:telecom_worker_manager_flutter/module/client_module/pv_task.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_customer.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_dashboard.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_setting.dart';
+import 'package:telecom_worker_manager_flutter/module/client/pv_task.dart';
 
 class ClientMainScreen extends StatefulWidget {
   const ClientMainScreen({super.key});

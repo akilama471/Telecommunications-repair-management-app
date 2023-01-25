@@ -4,7 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/services/authentication_services.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/services/authentication_services.dart';
 import 'package:telecom_worker_manager_flutter/config/app_themes.dart';
 import 'firebase_options.dart';
 

@@ -10,10 +10,11 @@ class AssetStore {
   static const String authHeader = "assets/images/headers/auth.png";
 
   //Apps Icons
-  static const String splashIconBottom =
-      "assets/images/icons/splash_icon_bottom.png";
-  static const String splashIconMiddle =
-      "assets/images/icons/splash_icon_middle.png";
+  static const String splashIconBottom = "assets/images/icons/splash_icon_bottom.png";
+  static const String splashIconMiddle = "assets/images/icons/splash_icon_middle.png";
   static const String splashIconTop = "assets/images/icons/splash_icon_top.png";
   static const String profileIcon = "assets/images/icons/profile.png";
+  static const String employeeIcon = "assets/images/icons/employee.png";
+  static const String fixIcon = "assets/images/icons/fix.png";
+  static const String dashboardIcon = "assets/images/icons/dashboard.png";
 }

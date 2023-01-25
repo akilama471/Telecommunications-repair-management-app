@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/components/footer_signin.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/components/form_signin.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/components/header_signin.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/controller/ctrl_signup.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/components/footer_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/components/form_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/components/header_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/controller/ctrl_signup.dart';
 
 class SignUpScreenView extends StatelessWidget {
   const SignUpScreenView({Key? key}) : super(key: key);

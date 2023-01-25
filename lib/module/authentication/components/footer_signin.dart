@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:telecom_worker_manager_flutter/module/authentication_module/view/view_signin.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/view/view_signin.dart';
 import 'package:telecom_worker_manager_flutter/widgets/dls_social_form_field.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
 import 'package:telecom_worker_manager_flutter/config/app_sizes.dart';

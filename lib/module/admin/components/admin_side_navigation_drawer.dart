@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:telecom_worker_manager_flutter/config/app_assests.dart';
-import 'package:telecom_worker_manager_flutter/module/admin_module/admin_dashboard.dart';
-import 'package:telecom_worker_manager_flutter/module/admin_module/pages/admin_parameter.dart';
+import 'package:telecom_worker_manager_flutter/module/authentication/services/authentication_services.dart';
 
 class AdminSideNavigationDrawer extends StatelessWidget {
   const AdminSideNavigationDrawer({
@@ -17,17 +15,39 @@ class AdminSideNavigationDrawer extends StatelessWidget {
         children: <Widget>[
           navigationHeader(context),
           ListTile(
-            leading: const Icon(Icons.dashboard),
+            leading: const Image(
+              image: AssetImage(
+                AssetStore.dashboardIcon,
+              ),
+              height: 24,
+            ),
             title: const Text('Dashboard'),
             onTap: () => {
-              Get.offAll(() => const AdminDashboardPage())
+              // Get.offAll(() => const AdminDashboardPage())
             },
           ),
           ListTile(
-            leading: const Icon(Icons.input),
-            title: const Text('Parameters'),
+            leading: const Image(
+              image: AssetImage(
+                AssetStore.fixIcon,
+              ),
+              height: 24,
+            ),
+            title: const Text('Regions'),
             onTap: () => {
-              Get.offAll(() => const AdminParameterPage())
+              //Get.offAll(() => const AdminParameterPage())
+            },
+          ),
+          ListTile(
+            leading: const Image(
+              image: AssetImage(
+                AssetStore.employeeIcon,
+              ),
+              height: 24,
+            ),
+            title: const Text('Employee'),
+            onTap: () => {
+              //Get.offAll(() => const AdminWorkerPage())
             },
           ),
           ListTile(
@@ -48,7 +68,7 @@ class AdminSideNavigationDrawer extends StatelessWidget {
             leading: const Icon(Icons.exit_to_app),
             title: const Text('Logout'),
             onTap: () => {
-              Navigator.of(context).pop()
+              AuthenticationServices().logOut()
             },
           ),
         ],

@@ -9,6 +9,7 @@ class NewRepairView extends StatefulWidget {
 }
 
 class _NewRepairViewState extends State<NewRepairView> {
+  String _dropdownValue = "fiber";
   @override
   Widget build(BuildContext context) => SafeArea(
       child: Scaffold(
@@ -25,16 +26,38 @@ class _NewRepairViewState extends State<NewRepairView> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
+                      children: [
                         // connection number , connection type, MDF , TID TAG
                         // dp number , Loop Number
                         // fault Type[OverHead , UG , Internal],
-                        FormTextWidget(inputType: TextInputType.number, labelText: "Connection Number", hintText: "Connection Number", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next),
-                        FormTextWidget(inputType: TextInputType.number, labelText: "Connection Number", hintText: "Connection Number", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next),
-                        FormTextWidget(inputType: TextInputType.number, labelText: "Connection Number", hintText: "Connection Number", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next)
+                        const FormTextWidget(inputType: TextInputType.number, labelText: "Connection Number", hintText: "Enter Connection Number Here", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next),
+                        DropdownButton(
+                          items: const [
+                            DropdownMenuItem(
+                              value: "fiber",
+                              child: Text("Fiber"),
+                            ),
+                            DropdownMenuItem(
+                              value: "adsl",
+                              child: Text("ADSL"),
+                            )
+                          ],
+                          value: _dropdownValue,
+                          onChanged: dropdownCallback,
+                        ),
+                        const FormTextWidget(inputType: TextInputType.number, labelText: "DP Number", hintText: "Enter DP Number Here", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next),
+                        const FormTextWidget(inputType: TextInputType.number, labelText: "Loop Number", hintText: "Enter Loop Number Here", maxLength: 10, prefixIcon: Icons.phone, textInputAction: TextInputAction.next)
                       ],
                     ),
                   ))
                 ],
               ))));
+
+  dropdownCallback(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(() {
+        _dropdownValue = selectedValue;
+      });
+    }
+  }
 }
